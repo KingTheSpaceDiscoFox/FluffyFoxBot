@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgaaeh12ky618"]
+
+[ext_resource type="Script" path="res://Globals/file_manager.gd" id="1_hd8hb"]
+
+[node name="File_Manager" type="Node"]
+script = ExtResource("1_hd8hb")

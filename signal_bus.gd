@@ -1,0 +1,57 @@
+extends Node
+
+signal recieve_text_from_chat_line
+
+signal text_chat_button_pressed
+
+signal close_sound_menu
+
+signal open_sound_menu
+
+signal add_sound_command
+
+signal attempt_connect_to_server
+
+signal attempt_authentication_and_join
+
+signal play_sound_file
+
+signal on_command_interrupt_button_pressed
+
+signal disconnect_from_twitch
+
+signal connect_to_twitch
+
+signal debug_button_pressed
+
+signal return_sound_command_non_interrupt
+
+signal master_volume_changed
+
+signal return_master_volume
+
+signal skip_sound_command
+
+signal clear_sound_command_queue
+
+signal save_config_file
+
+signal return_status_of_sound_command_interrupt
+
+signal ask_for_status_of_sound_command_interrupt
+
+signal sound_command_delete_request
+
+signal container_refresh_remove
+
+signal change_command_prefix
+
+signal request_all_channel_names
+
+signal add_channel_to_channel_list
+
+signal remove_channel_from_channel_list
+
+signal retry_token_fetch
+
+signal change_target_channel

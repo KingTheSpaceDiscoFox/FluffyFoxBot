@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccyt7nhpe8ud3"]
+
+[ext_resource type="Script" path="res://Gift.gd" id="1"]
+[ext_resource type="Script" path="res://Button.gd" id="3"]
+[ext_resource type="Script" path="res://LineEdit.gd" id="3_6ey00"]
+[ext_resource type="Script" path="res://ChatContainer.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://rkm6ge1nohu1" path="res://addons/gift/icon.png" id="5_aivqx"]
+[ext_resource type="Script" path="res://Settings_Button.gd" id="6_7kxnm"]
+[ext_resource type="Script" path="res://SoundCommandPlayer.gd" id="7_jmgrt"]
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gift" type="Node" parent="."]
+script = ExtResource("1")
+scopes = Array[String](["chat:edit", "chat:read", "moderator:read:followers"])
+
+[node name="ChatContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("5")
+
+[node name="Chat" type="Panel" parent="ChatContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ChatContainer/Chat"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+follow_focus = true
+
+[node name="ChatMessagesContainer" type="VBoxContainer" parent="ChatContainer/Chat/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEditContainer" type="HBoxContainer" parent="ChatContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="ChatContainer/LineEditContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+caret_blink = true
+script = ExtResource("3_6ey00")
+
+[node name="Chat_Button" type="Button" parent="ChatContainer/LineEditContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Send"
+script = ExtResource("3")
+
+[node name="Settings_Button" type="Button" parent="ChatContainer/LineEditContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon = ExtResource("5_aivqx")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_7kxnm")
+
+[node name="SoundCommandPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("7_jmgrt")

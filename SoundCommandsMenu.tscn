@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid="uid://bywmxdwalavob"]
+
+[ext_resource type="Script" path="res://SoundCommandsContainer.gd" id="2"]
+
+[node name="SoundCommandsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 649.0
+
+[node name="SoundCommandsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2")
+
+[node name="SoundCommandPanel" type="Panel" parent="SoundCommandsContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SoundCommandsContainer/SoundCommandPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+follow_focus = true
+
+[node name="SoundCommandsList" type="VBoxContainer" parent="SoundCommandsContainer/SoundCommandPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuBar" type="HBoxContainer" parent="SoundCommandsContainer"]
+layout_mode = 2
+
+[node name="Folder" type="Button" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+text = "Open Sound File Folder"
+
+[node name="Scan" type="Button" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+text = "Scan for Sound Files"
+
+[node name="LoadFromFile" type="Button" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+text = "Load From File"
+
+[node name="SoundCommandInterruptButton" type="Button" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+toggle_mode = true
+text = "Sound Command Interrupt"
+
+[node name="DebugButton" type="Button" parent="SoundCommandsContainer/MenuBar"]
+visible = false
+layout_mode = 2
+text = "Debug"
+
+[node name="Label" type="Label" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+text = "Master Volume Slider:"
+
+[node name="MasterVolume" type="HSlider" parent="SoundCommandsContainer/MenuBar"]
+custom_minimum_size = Vector2(120, 20)
+layout_mode = 2
+
+[node name="Close" type="Button" parent="SoundCommandsContainer/MenuBar"]
+layout_mode = 2
+text = "Close"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SoundCommandsContainer"]
+layout_mode = 2
+
+[node name="CommandNameLineEdit" type="LineEdit" parent="SoundCommandsContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Command Name"
+clear_button_enabled = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="SoundFileOptionButton" type="OptionButton" parent="SoundCommandsContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 24)
+layout_mode = 2
+
+[node name="ChangeDefaultVolume" type="Button" parent="SoundCommandsContainer/HBoxContainer"]
+layout_mode = 2
+text = "Change Volume"
+
+[node name="CommandVolumeSlider" type="HSlider" parent="SoundCommandsContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+value = 70.0
+
+[node name="PermissionsOptionButton" type="OptionButton" parent="SoundCommandsContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SoundCommandsContainer"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SoundCommandsContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Clear" type="Button" parent="SoundCommandsContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Clear"
+
+[node name="Add" type="Button" parent="SoundCommandsContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+disabled = true
+text = "Add Command"

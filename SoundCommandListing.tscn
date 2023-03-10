@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3pqxkswdcbfx"]
+
+[ext_resource type="Script" path="res://SoundCommandListing.gd" id="1"]
+
+[node name="SoundCommandListing" type="HBoxContainer"]
+offset_right = 400.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+script = ExtResource("1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+scroll_active = false
+selection_enabled = true
